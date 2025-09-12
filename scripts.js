@@ -7,7 +7,7 @@ const form = document.querySelector("form");
 const amount = document.getElementById("amount");
 const currency = document.getElementById("currency");
 const footer = document.querySelector("main footer");
-const description = document.getElementById("description")
+const description = document.getElementById("description");
 
 //Manupulando o input amount para somente numero
 amount.addEventListener("input", () => {
@@ -32,12 +32,11 @@ form.onsubmit = (event) => {
 };
 function convertCurrency(amount, price, symbol) {
   try {
-    description.textContent = '${symbol} 1 = ${price}'
-    footer.classList.add("show-result")
-
+    description.textContent = `${symbol} 1 = ${price}`;
+    footer.classList.add("show-result");
   } catch (error) {
     console.log(error);
-    footer.classList.remove("show-result")
+    footer.classList.remove("show-result");
     alert("NAO FOI POSSIVEL COVERTER, TENTER NOVAMENTE MAIS TARDE");
   }
 }
